@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class ErrorCodeMapper {
     public String getErrorCode(Throwable exception) {
         String code = getErrorCodeFromPropertiesOrAnnotation(exception.getClass());
-        return code == null ? "GENERAL_ERROR" : code;
+        return code == null ? "00" : code;
     }
 
     private String getErrorCodeFromPropertiesOrAnnotation(Class<?> exceptionClass) {

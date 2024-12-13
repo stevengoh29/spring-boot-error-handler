@@ -28,10 +28,8 @@ public class DefaultFallbackApiExceptionHandler implements FallbackApiExceptionH
         String errorCode = errorCodeMapper.getErrorCode(throwable);
         String errorMessage = errorMessageMapper.getMessage(throwable);
 
-        return ApiErrorResponse.builder()
-                .statusCode(httpStatusCode)
-                .responseCode(errorCode)
-                .message(errorMessage)
-                .build();
+        System.out.println(throwable.getClass());
+
+        return new ApiErrorResponse(httpStatusCode, errorCode, errorMessage);
     }
 }

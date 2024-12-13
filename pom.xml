@@ -50,13 +50,31 @@
 			<artifactId>lombok</artifactId>
 			<scope>annotationProcessor</scope>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>17.0.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.1.2</version> <!-- Make sure to use a recent version -->
+				<configuration>
+					<reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+					<printSummary>true</printSummary>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

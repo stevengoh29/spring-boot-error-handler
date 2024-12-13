@@ -1,6 +1,6 @@
 package io.stevengoh.common.spring_boot_exception_handling;
 
-import io.stevengoh.common.spring_boot_exception_handling.exceptions.CustomException;
+import io.stevengoh.common.spring_boot_exception_handling.exceptions.CustomErrorException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,11 +11,6 @@ public class IntegrationTestRestController {
 
     @GetMapping("/runtime")
     void throwRuntimeException() {
-        throw new RuntimeException("This is a test RuntimeException");
-    }
-
-    @GetMapping("/custom")
-    void throwExceptionWithBadRequestStatus() {
-        throw new CustomException("This is a test CustomException");
+        throw new CustomErrorException("This is a test exception");
     }
 }

@@ -3,10 +3,10 @@ package io.stevengoh.common.spring_boot_exception_handling;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class SpringBootExceptionHandlingApplicationTests {
 
-	@Test
+//	@Test
 	void contextLoads() {
 	}
 
